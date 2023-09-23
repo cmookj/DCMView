@@ -1,0 +1,6 @@
+.DS_Store
+dcmtk
+dcmtk-build
+dcmtk-src
+test\ data
+DCMView.xcodeproj
