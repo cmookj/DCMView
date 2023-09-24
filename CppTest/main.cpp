@@ -2,7 +2,7 @@
 //  main.cpp
 //  CppTest
 //
-//  Created by Changmook Chun on 9/22/23.
+//  Created by Changmook Chun on 9/24/23.
 //
 
 #include "dcmtk/dcmimgle/dcmimage.h"
@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
                 image->setMinMaxWindow();
                 Uint8 *pixelData = (Uint8 *)(image->getOutputData(8 /* bits */));
                 if (pixelData != NULL) {
-                    /* do something useful with the pixel data */
+                    cout << "Success!\n";
                 }
             }
             
