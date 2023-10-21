@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E65E9DE2AE29793004236BF /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E65E9DC2AE29793004236BF /* MainWindowController.swift */; };
+		0E65E9DF2AE29793004236BF /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E65E9DD2AE29793004236BF /* MainWindowController.xib */; };
 		0ECA593F2ABE291A00A1C87B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA593E2ABE291A00A1C87B /* AppDelegate.swift */; };
 		0ECA59412ABE291B00A1C87B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA59402ABE291B00A1C87B /* Assets.xcassets */; };
 		0ECA59442ABE291B00A1C87B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA59422ABE291B00A1C87B /* MainMenu.xib */; };
@@ -41,6 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E65E9DC2AE29793004236BF /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		0E65E9DD2AE29793004236BF /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		0ECA593B2ABE291A00A1C87B /* DCMView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCMView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECA593E2ABE291A00A1C87B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ECA59402ABE291B00A1C87B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				0ECA59402ABE291B00A1C87B /* Assets.xcassets */,
 				0ECA59422ABE291B00A1C87B /* MainMenu.xib */,
 				0ECA59452ABE291B00A1C87B /* DCMView.entitlements */,
+				0E65E9DC2AE29793004236BF /* MainWindowController.swift */,
+				0E65E9DD2AE29793004236BF /* MainWindowController.xib */,
 			);
 			path = DCMView;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ECA59412ABE291B00A1C87B /* Assets.xcassets in Resources */,
+				0E65E9DF2AE29793004236BF /* MainWindowController.xib in Resources */,
 				0ECA59442ABE291B00A1C87B /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +258,7 @@
 			files = (
 				0ECA593F2ABE291A00A1C87B /* AppDelegate.swift in Sources */,
 				0ECA59922AC0873100A1C87B /* c_interface.cpp in Sources */,
+				0E65E9DE2AE29793004236BF /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

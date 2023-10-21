@@ -42,3 +42,14 @@ Get source code from GitHub repository
 > make DESTDIR=../dcmtk-install install
 ```
 
+
+
+## TODO
+
+* Inversion of image
+* Histogram equalization
+* Pixel value & coordinate display
+* Statistics in selected region
+* Profile plot 
+* Zoom in/out
+* DICOM tag display

@@ -25,7 +25,11 @@ unsigned long get_frame_count();
 
 int get_depth();
 
-const unsigned char* const get_pixel_data();
+const char* const get_pixel_data_unsigned();
+const void* const get_pixel_data_raw();
+
+int signed_representation();
+int byte_size_representation();
 
 #ifdef __cplusplus
 }
