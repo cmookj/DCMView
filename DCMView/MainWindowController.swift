@@ -30,7 +30,7 @@ class MainWindowController: NSWindowController {
     }
     
     @IBOutlet weak var infoTextField: NSTextField!
-    @IBOutlet weak var imageView: NSImageView!
+    @IBOutlet weak var imageView: DicomImageView! // NSImageView!
    
     var width: Int = -1
     var height: Int = -1

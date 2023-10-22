@@ -28,6 +28,7 @@
 		0ECA598E2AC0737500A1C87B /* libofstd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA597B2AC053E400A1C87B /* libofstd.a */; };
 		0ECA598F2AC0738400A1C87B /* libz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA59812AC0543600A1C87B /* libz.a */; };
 		0ECA59922AC0873100A1C87B /* c_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA59902AC0873100A1C87B /* c_interface.cpp */; };
+		0EF68D0C2AE5287500DADD84 /* DicomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF68D0B2AE5287500DADD84 /* DicomImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +64,7 @@
 		0ECA59852AC0722400A1C87B /* DCMView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCMView-Bridging-Header.h"; sourceTree = "<group>"; };
 		0ECA59902AC0873100A1C87B /* c_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = c_interface.cpp; sourceTree = "<group>"; };
 		0ECA59912AC0873100A1C87B /* c_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_interface.h; sourceTree = "<group>"; };
+		0EF68D0B2AE5287500DADD84 /* DicomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicomImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				0ECA59452ABE291B00A1C87B /* DCMView.entitlements */,
 				0E65E9DC2AE29793004236BF /* MainWindowController.swift */,
 				0E65E9DD2AE29793004236BF /* MainWindowController.xib */,
+				0EF68D0B2AE5287500DADD84 /* DicomImageView.swift */,
 			);
 			path = DCMView;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ECA593F2ABE291A00A1C87B /* AppDelegate.swift in Sources */,
+				0EF68D0C2AE5287500DADD84 /* DicomImageView.swift in Sources */,
 				0ECA59922AC0873100A1C87B /* c_interface.cpp in Sources */,
 				0E65E9DE2AE29793004236BF /* MainWindowController.swift in Sources */,
 			);
