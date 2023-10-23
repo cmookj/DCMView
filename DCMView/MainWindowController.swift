@@ -20,6 +20,8 @@ class MainWindowController: NSWindowController {
     
     var level = 0
     
+    var dicomLoaded = false
+    
     @objc var greyLevel = 2000 {
         willSet {
             willChangeValue(forKey: "minLevel")
@@ -78,6 +80,8 @@ class MainWindowController: NSWindowController {
             imageView.bounds = imageRect
             
             displayImage()
+            
+            imageView.mouseRolloverEnabled = true
         }
     }
     
@@ -186,6 +190,30 @@ class MainWindowController: NSWindowController {
                                                selector: #selector(receiveViewDidSendMouseLocationNotification),
                                                name: DCMViewImageViewDidSendMouseLocationNotification,
                                                object: nil)
+        
+        let dialog = NSOpenPanel();
+        
+        dialog.title                   = "Choose a DICOM file";
+        dialog.showsResizeIndicator    = true;
+        dialog.showsHiddenFiles        = false;
+        dialog.canChooseDirectories    = true;
+        dialog.canCreateDirectories    = true;
+        dialog.allowsMultipleSelection = false;
+        dialog.allowedContentTypes     = [.data];
+        
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            let result = dialog.url // Pathname of the file
+            
+            if (result != nil) {
+                let path = result!.path
+                loadDicom(with: path)
+                dicomLoaded = true
+            }
+        } else {
+            // User clicked on "Cancel"
+            window!.performClose(self)
+            return
+        }
     }
 
 }

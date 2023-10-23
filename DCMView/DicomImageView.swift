@@ -26,6 +26,8 @@ class DicomImageView: NSImageView {
     var mouseLocationInImage: ImagePoint = ImagePoint(u: 0, v: 0)
     var currentHU: Int16 = 0
     
+    var mouseRolloverEnabled = false
+    
     // To support mouse moved events
     override func viewDidMoveToWindow() {
         window?.acceptsMouseMovedEvents = true
@@ -57,20 +59,22 @@ class DicomImageView: NSImageView {
     }
     
     override func mouseMoved(with event: NSEvent) {
-        // Convert mouse coordinate
-        let pointInView = convert(event.locationInWindow, from: nil)
-        let pointInImage = imagePoint(from: pointInView)
-        
-        let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "event")
-        logger.log("Mouse coordinates = \(pointInView.x), \(pointInView.y), Image coordinates = \(pointInImage.u), \(pointInImage.v)")
-        
-        mouseLocationInImage = pointInImage
-        
-        let pixelDataRaw = get_pixel_data_raw()!
-        currentHU = rawDataValue(from: pixelDataRaw, at: mouseLocationInImage.u, and: mouseLocationInImage.v)
-        
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.post(name: DCMViewImageViewDidSendMouseLocationNotification, object: self, userInfo: nil)
+        if mouseRolloverEnabled {
+            // Convert mouse coordinate
+            let pointInView = convert(event.locationInWindow, from: nil)
+            let pointInImage = imagePoint(from: pointInView)
+            
+            let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "event")
+            logger.log("Mouse coordinates = \(pointInView.x), \(pointInView.y), Image coordinates = \(pointInImage.u), \(pointInImage.v)")
+            
+            mouseLocationInImage = pointInImage
+            
+            let pixelDataRaw = get_pixel_data_raw()!
+            currentHU = rawDataValue(from: pixelDataRaw, at: mouseLocationInImage.u, and: mouseLocationInImage.v)
+            
+            let notificationCenter = NotificationCenter.default
+            notificationCenter.post(name: DCMViewImageViewDidSendMouseLocationNotification, object: self, userInfo: nil)
+        }
     }
   
     func rawDataValue(from data: UnsafeRawPointer, at u: Int, and v: Int) -> Int16 {
