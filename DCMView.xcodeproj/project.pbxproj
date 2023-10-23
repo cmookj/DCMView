@@ -12,14 +12,6 @@
 		0ECA593F2ABE291A00A1C87B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA593E2ABE291A00A1C87B /* AppDelegate.swift */; };
 		0ECA59412ABE291B00A1C87B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA59402ABE291B00A1C87B /* Assets.xcassets */; };
 		0ECA59442ABE291B00A1C87B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA59422ABE291B00A1C87B /* MainMenu.xib */; };
-		0ECA59702AC0532500A1C87B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA596F2AC0532500A1C87B /* main.cpp */; };
-		0ECA59762AC053B700A1C87B /* libdcmimgle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA59752AC053B700A1C87B /* libdcmimgle.a */; };
-		0ECA59782AC053CB00A1C87B /* libdcmdata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA59772AC053CB00A1C87B /* libdcmdata.a */; };
-		0ECA597C2AC053E400A1C87B /* liboficonv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA59792AC053E400A1C87B /* liboficonv.a */; };
-		0ECA597D2AC053E400A1C87B /* liboflog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA597A2AC053E400A1C87B /* liboflog.a */; };
-		0ECA597E2AC053E400A1C87B /* libofstd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA597B2AC053E400A1C87B /* libofstd.a */; };
-		0ECA59802AC053EF00A1C87B /* libdcmimage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA597F2AC053EF00A1C87B /* libdcmimage.a */; };
-		0ECA59822AC0543600A1C87B /* libz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA59812AC0543600A1C87B /* libz.a */; };
 		0ECA59892AC0737500A1C87B /* libdcmdata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA59772AC053CB00A1C87B /* libdcmdata.a */; };
 		0ECA598A2AC0737500A1C87B /* libdcmimage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA597F2AC053EF00A1C87B /* libdcmimage.a */; };
 		0ECA598B2AC0737500A1C87B /* libdcmimgle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA59752AC053B700A1C87B /* libdcmimgle.a */; };
@@ -32,18 +24,6 @@
 		0EF68D102AE5791A00DADD84 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF68D0F2AE5791A00DADD84 /* Utility.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		0ECA596B2AC0532500A1C87B /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		0E65E9DC2AE29793004236BF /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		0E65E9DD2AE29793004236BF /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
@@ -52,7 +32,6 @@
 		0ECA59402ABE291B00A1C87B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0ECA59432ABE291B00A1C87B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0ECA59452ABE291B00A1C87B /* DCMView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DCMView.entitlements; sourceTree = "<group>"; };
-		0ECA596D2AC0532500A1C87B /* CppTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CppTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECA596F2AC0532500A1C87B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0ECA59752AC053B700A1C87B /* libdcmimgle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdcmimgle.a; path = dcmtk/lib/libdcmimgle.a; sourceTree = "<group>"; };
 		0ECA59772AC053CB00A1C87B /* libdcmdata.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdcmdata.a; path = dcmtk/lib/libdcmdata.a; sourceTree = "<group>"; };
@@ -84,20 +63,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0ECA596A2AC0532500A1C87B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0ECA59822AC0543600A1C87B /* libz.a in Frameworks */,
-				0ECA59762AC053B700A1C87B /* libdcmimgle.a in Frameworks */,
-				0ECA59802AC053EF00A1C87B /* libdcmimage.a in Frameworks */,
-				0ECA59782AC053CB00A1C87B /* libdcmdata.a in Frameworks */,
-				0ECA597C2AC053E400A1C87B /* liboficonv.a in Frameworks */,
-				0ECA597D2AC053E400A1C87B /* liboflog.a in Frameworks */,
-				0ECA597E2AC053E400A1C87B /* libofstd.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -116,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				0ECA593B2ABE291A00A1C87B /* DCMView.app */,
-				0ECA596D2AC0532500A1C87B /* CppTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,23 +153,6 @@
 			productReference = 0ECA593B2ABE291A00A1C87B /* DCMView.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0ECA596C2AC0532500A1C87B /* CppTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0ECA59732AC0532500A1C87B /* Build configuration list for PBXNativeTarget "CppTest" */;
-			buildPhases = (
-				0ECA59692AC0532500A1C87B /* Sources */,
-				0ECA596A2AC0532500A1C87B /* Frameworks */,
-				0ECA596B2AC0532500A1C87B /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CppTest;
-			productName = CppTest;
-			productReference = 0ECA596D2AC0532500A1C87B /* CppTest */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,9 +166,6 @@
 					0ECA593A2ABE291A00A1C87B = {
 						CreatedOnToolsVersion = 15.0;
 						LastSwiftMigration = 1500;
-					};
-					0ECA596C2AC0532500A1C87B = {
-						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
@@ -239,7 +183,6 @@
 			projectRoot = "";
 			targets = (
 				0ECA593A2ABE291A00A1C87B /* DCMView */,
-				0ECA596C2AC0532500A1C87B /* CppTest */,
 			);
 		};
 /* End PBXProject section */
@@ -267,14 +210,6 @@
 				0EF68D0C2AE5287500DADD84 /* DicomImageView.swift in Sources */,
 				0ECA59922AC0873100A1C87B /* c_interface.cpp in Sources */,
 				0E65E9DE2AE29793004236BF /* MainWindowController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0ECA59692AC0532500A1C87B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0ECA59702AC0532500A1C87B /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,36 +422,6 @@
 			};
 			name = Release;
 		};
-		0ECA59712AC0532500A1C87B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = CppTest/CppTest.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PJMW65YB82;
-				ENABLE_HARDENED_RUNTIME = YES;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/opt/homebrew/Cellar/zlib/1.2.13/lib,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		0ECA59722AC0532500A1C87B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = CppTest/CppTest.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PJMW65YB82;
-				ENABLE_HARDENED_RUNTIME = YES;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/opt/homebrew/Cellar/zlib/1.2.13/lib,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -534,15 +439,6 @@
 			buildConfigurations = (
 				0ECA59492ABE291B00A1C87B /* Debug */,
 				0ECA594A2ABE291B00A1C87B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0ECA59732AC0532500A1C87B /* Build configuration list for PBXNativeTarget "CppTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0ECA59712AC0532500A1C87B /* Debug */,
-				0ECA59722AC0532500A1C87B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
