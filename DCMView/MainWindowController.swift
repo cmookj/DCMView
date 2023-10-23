@@ -20,6 +20,8 @@ class MainWindowController: NSWindowController {
     
     var level = 0
     
+    var dicomLoaded = false
+    
     @objc var greyLevel = 2000 {
         willSet {
             willChangeValue(forKey: "minLevel")
@@ -205,9 +207,11 @@ class MainWindowController: NSWindowController {
             if (result != nil) {
                 let path = result!.path
                 loadDicom(with: path)
+                dicomLoaded = true
             }
         } else {
             // User clicked on "Cancel"
+            window!.performClose(self)
             return
         }
     }
