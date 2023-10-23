@@ -161,6 +161,9 @@ class MainWindowController: NSWindowController {
         let byteSize = Int(byte_size_representation())
         
         if let image = mask(from: pixelDataRaw, withWidth: width, andHeight: height, withByteSize: byteSize, andSigned: signed) {
+            self.imageView.width = width
+            self.imageView.height = height
+            
             DispatchQueue.main.async {
                 let nsImg = NSImage(cgImage: image, size: .zero)
                 self.imageView.image = nsImg

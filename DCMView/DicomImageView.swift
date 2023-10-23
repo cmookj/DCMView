@@ -29,15 +29,41 @@ class DicomImageView: NSImageView {
     // To support mouse moved events
     override func viewDidMoveToWindow() {
         window?.acceptsMouseMovedEvents = true
+        
+        let options: NSTrackingArea.Options = [
+            NSTrackingArea.Options.mouseMoved,
+            NSTrackingArea.Options.activeAlways,
+            NSTrackingArea.Options.inVisibleRect]
+        
+        let trackingArea = NSTrackingArea(rect: NSRect(), options: options, owner: self)
+        
+        addTrackingArea(trackingArea)
     }
     
     override func mouseDown(with event: NSEvent) {
+        // Convert mouse coordinate
+//        let pointInView = convert(event.locationInWindow, from: nil)
+//        let pointInImage = imagePoint(from: pointInView)
+//        
+//        let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "event")
+//        logger.log("Mouse coordinates = \(pointInView.x), \(pointInView.y), Image coordinates = \(pointInImage.u), \(pointInImage.v)")
+//        mouseLocationInImage = pointInImage
+//        
+//        let pixelDataRaw = get_pixel_data_raw()!
+//        currentHU = rawDataValue(from: pixelDataRaw, at: mouseLocationInImage.u, and: mouseLocationInImage.v)
+//        
+//        let notificationCenter = NotificationCenter.default
+//        notificationCenter.post(name: DCMViewImageViewDidSendMouseLocationNotification, object: self, userInfo: nil)
+    }
+    
+    override func mouseMoved(with event: NSEvent) {
         // Convert mouse coordinate
         let pointInView = convert(event.locationInWindow, from: nil)
         let pointInImage = imagePoint(from: pointInView)
         
         let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "event")
         logger.log("Mouse coordinates = \(pointInView.x), \(pointInView.y), Image coordinates = \(pointInImage.u), \(pointInImage.v)")
+        
         mouseLocationInImage = pointInImage
         
         let pixelDataRaw = get_pixel_data_raw()!
@@ -48,9 +74,6 @@ class DicomImageView: NSImageView {
     }
   
     func rawDataValue(from data: UnsafeRawPointer, at u: Int, and v: Int) -> Int16 {
-        width = Int(get_width())
-        height = Int(get_height())
-        
         let pointer = data.bindMemory(to: Int16.self, capacity: width * height)
         return pointer[v * width + u]
     }
