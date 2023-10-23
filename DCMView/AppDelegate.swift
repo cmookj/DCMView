@@ -27,7 +27,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func addWindowController() {
         let windowController = MainWindowController()
         windowController.showWindow(self)
-        windowControllers.append(windowController)
+        if windowController.shouldShowWindow {
+            windowControllers.append(windowController)
+        }
+        else {
+            windowController.close()
+        }
     }
     
     @IBAction func displayNewWindow(_ sender: NSMenuItem) {

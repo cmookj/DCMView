@@ -20,7 +20,7 @@ class MainWindowController: NSWindowController {
     
     var level = 0
     
-    var dicomLoaded = false
+    var shouldShowWindow = false
     
     @objc var greyLevel = 2000 {
         willSet {
@@ -200,18 +200,17 @@ class MainWindowController: NSWindowController {
         dialog.canCreateDirectories    = true;
         dialog.allowsMultipleSelection = false;
         dialog.allowedContentTypes     = [.data];
-        
+
         if (dialog.runModal() == NSApplication.ModalResponse.OK) {
             let result = dialog.url // Pathname of the file
             
             if (result != nil) {
                 let path = result!.path
                 loadDicom(with: path)
-                dicomLoaded = true
+                shouldShowWindow = true
             }
         } else {
             // User clicked on "Cancel"
-            window!.performClose(self)
             return
         }
     }
