@@ -13,7 +13,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var mainWindowController: MainWindowController?
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        // Create a window controller with a XIB file of the same name
+        let mainWindowController = MainWindowController()
+        
+        // Put the window of the window controller on screen
+        mainWindowController.showWindow(self)
+        
+        // Set the property to point to the window controller
+        self.mainWindowController = mainWindowController
+        
         openDicomFile(self)
     }
     
@@ -23,18 +31,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
         return true
-    }
- 
-    func openWindowWithDicom() {
-        // Create a window controller with a XIB file of the same name
-        let mainWindowController = MainWindowController()
-        
-        // Put the window of the window controller on screen
-        mainWindowController.redisplayImage()
-        mainWindowController.showWindow(self)
-        
-        // Set the property to point to the window controller
-        self.mainWindowController = mainWindowController
     }
     
     @IBAction func openDicomFile(_ sender: AnyObject) {
@@ -53,10 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             if (result != nil) {
                 let path = result!.path
-                let state = create_reader(path)
-                if (state == NO_ERR) {
-                    openWindowWithDicom()
-                }
+                mainWindowController!.loadDicom(with: path)
             }
         } else {
             // User clicked on "Cancel"

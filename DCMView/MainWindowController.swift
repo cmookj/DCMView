@@ -7,35 +7,17 @@
 
 import Cocoa
 
+
 class MainWindowController: NSWindowController {
 
-    override var windowNibName: String {
-        return "MainWindowController"
-    }
-    
-    override func windowDidLoad() {
-        super.windowDidLoad()
-        
-        self.width = Int(get_width())
-        self.height = Int(get_height())
-        self.frameCount = Int(get_frame_count())
-        self.depth = Int(get_depth())
-        
-        // let pixelDataUnsigned = get_pixel_data_unsigned()
-       
-        // infoTextField.stringValue = "Width = \(width), Height = \(height), Frame count = \(frameCount), Depth = \(depth)"
-        redisplayImage()
-        
-        // window.setIsVisible(true)
-    }
-    
-    @IBOutlet weak var infoTextField: NSTextField!
-    @IBOutlet weak var imageView: NSImageView!
+    @IBOutlet weak var imageView: DicomImageView!
+    @IBOutlet weak var infoStringField: NSTextField!
    
-    var width: Int = -1
-    var height: Int = -1
-    var depth: Int = -1
-    var frameCount: Int = -1
+    var width: Int = 0
+    var height: Int = 0
+    var frameCount: Int = 0
+    var depth: Int = 0
+    
     var level = 0
     
     @objc var greyLevel = 2000 {
@@ -49,7 +31,7 @@ class MainWindowController: NSWindowController {
             didChangeValue(forKey: "maxLevel")
             
             level = -greyLevel + 2000
-            redisplayImage()
+            displayImage()
         }
     }
     
@@ -63,7 +45,7 @@ class MainWindowController: NSWindowController {
             didChangeValue(forKey: "minLevel")
             didChangeValue(forKey: "maxLevel")
             
-            redisplayImage()
+            displayImage()
         }
     }
     
@@ -78,19 +60,27 @@ class MainWindowController: NSWindowController {
             return greyLevel + greyWindow/2
         }
     }
-    
-    func applyWindowAndLevel(to val: Int16) -> UInt8 {
-        let white = level + greyWindow/2
-        let black = level - greyWindow/2
-        
-        if val >= white {
-            return UInt8(255)
-        }
-        else if val <= black {
-            return UInt8(0)
-        }
-        return UInt8((Double(val) - Double(black))/Double(greyWindow) * 255)
+
+    deinit {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
     }
+    
+    func loadDicom(with path: String) {
+        let state = create_reader(path)
+        if (state == NO_ERR) {
+            width = Int(get_width())
+            height = Int(get_height())
+            frameCount = Int(get_frame_count())
+            depth = Int(get_depth())
+            
+            let imageRect: NSRect = NSMakeRect(0.0, 0.0, CGFloat(width), CGFloat(height))
+            imageView.bounds = imageRect
+            
+            displayImage()
+        }
+    }
+    
     
     func mask(from data: UnsafeRawPointer, withWidth width: Int, andHeight height: Int, withByteSize size: Int, andSigned signed: Bool) -> CGImage? {
         let colorSpace = CGColorSpaceCreateDeviceGray()
@@ -148,8 +138,21 @@ class MainWindowController: NSWindowController {
 
         return context.makeImage()
     }
-   
-    func redisplayImage() {
+    
+    func applyWindowAndLevel(to val: Int16) -> UInt8 {
+        let white = level + greyWindow/2
+        let black = level - greyWindow/2
+        
+        if val >= white {
+            return UInt8(255)
+        }
+        else if val <= black {
+            return UInt8(0)
+        }
+        return UInt8((Double(val) - Double(black))/Double(greyWindow) * 255)
+    }
+    
+    func displayImage() {
         let width = Int(get_width())
         let height = Int(get_height())
         
@@ -163,6 +166,23 @@ class MainWindowController: NSWindowController {
                 self.imageView.image = nsImg
             }
         }
+    }
+   
+    @objc func receiveViewDidSendMouseLocationNotification(_ note: NSNotification) {
+        infoStringField.stringValue = "(\(imageView.mouseLocationInImage.u), \(imageView.mouseLocationInImage.v)) \(imageView.currentHU)"
+        
+    }
+    
+    override var windowNibName: String {
+        return "MainWindowController"
+    }
+    
+    override func windowDidLoad() {
+        super.windowDidLoad()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(receiveViewDidSendMouseLocationNotification),
+                                               name: DCMViewImageViewDidSendMouseLocationNotification,
+                                               object: nil)
     }
 
 }

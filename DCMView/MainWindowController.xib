@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22154" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22155" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22155"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="DCMView" customModuleProvider="target">
             <connections>
                 <outlet property="imageView" destination="0fG-TY-YGD" id="vwz-8u-08T"/>
+                <outlet property="infoStringField" destination="FUL-FV-1O4" id="nAy-nT-6pM"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -17,19 +18,19 @@
         <window title="DCMView" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="661" y="186" width="1342" height="961"/>
+            <rect key="contentRect" x="661" y="186" width="1401" height="1088"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="1342" height="961"/>
+                <rect key="frame" x="0.0" y="0.0" width="1401" height="1088"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fG-TY-YGD">
-                        <rect key="frame" x="20" y="20" width="1116" height="890"/>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fG-TY-YGD" customClass="DicomImageView" customModule="DCMView" customModuleProvider="target">
+                        <rect key="frame" x="20" y="44" width="1024" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="4We-bW-jJx"/>
                     </imageView>
                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="urh-vd-MqZ">
-                        <rect key="frame" x="1098" y="893" width="36" height="16"/>
+                        <rect key="frame" x="1157" y="1020" width="36" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="Level" id="2ed-ed-xIS">
                             <font key="font" metaFont="system"/>
@@ -38,7 +39,7 @@
                         </textFieldCell>
                     </textField>
                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2mT-mE-FDN">
-                        <rect key="frame" x="1081" y="831" width="53" height="16"/>
+                        <rect key="frame" x="1140" y="958" width="53" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="Window" id="2gA-a0-IEn">
                             <font key="font" metaFont="system"/>
@@ -47,7 +48,7 @@
                         </textFieldCell>
                     </textField>
                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZU-St-nuK">
-                        <rect key="frame" x="1213" y="918" width="37" height="16"/>
+                        <rect key="frame" x="1272" y="1045" width="37" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="Hx3-l0-M6c">
                             <font key="font" metaFont="system"/>
@@ -59,7 +60,7 @@
                         </connections>
                     </textField>
                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPC-ta-sSK">
-                        <rect key="frame" x="1213" y="857" width="37" height="16"/>
+                        <rect key="frame" x="1272" y="984" width="37" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="S3a-WN-0mH">
                             <font key="font" metaFont="system"/>
@@ -71,7 +72,7 @@
                         </connections>
                     </textField>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQQ-dB-DDA">
-                        <rect key="frame" x="1138" y="884" width="186" height="28"/>
+                        <rect key="frame" x="1197" y="1011" width="186" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="-1000" maxValue="3000" tickMarkPosition="above" sliderType="linear" id="gfk-J9-dzq">
                             <font key="font" size="12" name="Helvetica"/>
@@ -81,7 +82,7 @@
                         </connections>
                     </slider>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KdW-Fp-hlr">
-                        <rect key="frame" x="1138" y="823" width="186" height="28"/>
+                        <rect key="frame" x="1197" y="950" width="186" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="2000" doubleValue="1000" tickMarkPosition="above" sliderType="linear" id="NyI-7N-Xxf">
                             <font key="font" size="12" name="Helvetica"/>
@@ -91,7 +92,7 @@
                         </connections>
                     </slider>
                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ftj-fI-POm">
-                        <rect key="frame" x="1140" y="787" width="37" height="16"/>
+                        <rect key="frame" x="1199" y="914" width="37" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="VKP-Il-jkS">
                             <font key="font" metaFont="system"/>
@@ -103,7 +104,7 @@
                         </connections>
                     </textField>
                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tan-pf-7Of">
-                        <rect key="frame" x="1287" y="787" width="37" height="16"/>
+                        <rect key="frame" x="1346" y="914" width="37" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="WZ1-8M-v2P">
                             <font key="font" metaFont="system"/>
@@ -114,12 +115,21 @@
                             <binding destination="-2" name="value" keyPath="maxLevel" id="jDq-0r-CV9"/>
                         </connections>
                     </textField>
+                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FUL-FV-1O4">
+                        <rect key="frame" x="18" y="20" width="1028" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="noA-NZ-aJE">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="-55" y="416"/>
+            <point key="canvasLocation" x="-54.5" y="445"/>
         </window>
     </objects>
 </document>
