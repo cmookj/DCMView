@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0ECA596C2AC0532500A1C87B"
-               BuildableName = "CppTest"
-               BlueprintName = "CppTest"
+               BlueprintIdentifier = "0ECA593A2ABE291A00A1C87B"
+               BuildableName = "DCMView.app"
+               BlueprintName = "DCMView"
                ReferencedContainer = "container:DCMView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -38,15 +38,14 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      viewDebuggingEnabled = "No">
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0ECA596C2AC0532500A1C87B"
-            BuildableName = "CppTest"
-            BlueprintName = "CppTest"
+            BlueprintIdentifier = "0ECA593A2ABE291A00A1C87B"
+            BuildableName = "DCMView.app"
+            BlueprintName = "DCMView"
             ReferencedContainer = "container:DCMView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,21 +60,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0ECA596C2AC0532500A1C87B"
-            BuildableName = "CppTest"
-            BlueprintName = "CppTest"
+            BlueprintIdentifier = "0ECA593A2ABE291A00A1C87B"
+            BuildableName = "DCMView.app"
+            BlueprintName = "DCMView"
             ReferencedContainer = "container:DCMView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0ECA596C2AC0532500A1C87B"
-            BuildableName = "CppTest"
-            BlueprintName = "CppTest"
-            ReferencedContainer = "container:DCMView.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

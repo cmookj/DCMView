@@ -7,6 +7,7 @@
 
 import Cocoa
 import os
+import DcmtkInterfaceLib
 
 let DCMViewImageViewDidSendMouseLocationNotification
 = NSNotification.Name("com.teaeles.dcmview.DCMViewViewDidSendMouseLocationNotification")

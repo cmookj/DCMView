@@ -1,11 +1,11 @@
 //
-//  c_interface.cpp
+//  dcmtk_interface.cpp
 //  DCMView
 //
 //  Created by Changmook Chun on 9/24/23.
 //
 
-#include "c_interface.h"
+#include "dcmtk_interface.hpp"
 
 #include "dcmtk/dcmimgle/dcmimage.h"
 #include "dcmtk/dcmimgle/dipixel.h"

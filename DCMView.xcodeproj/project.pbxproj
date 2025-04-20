@@ -19,7 +19,7 @@
 		0ECA598D2AC0737500A1C87B /* liboflog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA597A2AC053E400A1C87B /* liboflog.a */; };
 		0ECA598E2AC0737500A1C87B /* libofstd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA597B2AC053E400A1C87B /* libofstd.a */; };
 		0ECA598F2AC0738400A1C87B /* libz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECA59812AC0543600A1C87B /* libz.a */; };
-		0ECA59922AC0873100A1C87B /* c_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA59902AC0873100A1C87B /* c_interface.cpp */; };
+		0ECA59922AC0873100A1C87B /* dcmtk_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA59902AC0873100A1C87B /* dcmtk_interface.cpp */; };
 		0EF68D0C2AE5287500DADD84 /* DicomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF68D0B2AE5287500DADD84 /* DicomImageView.swift */; };
 		0EF68D102AE5791A00DADD84 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF68D0F2AE5791A00DADD84 /* Utility.swift */; };
 /* End PBXBuildFile section */
@@ -27,6 +27,7 @@
 /* Begin PBXFileReference section */
 		0E65E9DC2AE29793004236BF /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		0E65E9DD2AE29793004236BF /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		0EC9A6BF2DB491CE00BB12AF /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		0ECA593B2ABE291A00A1C87B /* DCMView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCMView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECA593E2ABE291A00A1C87B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ECA59402ABE291B00A1C87B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,9 +42,8 @@
 		0ECA597F2AC053EF00A1C87B /* libdcmimage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdcmimage.a; path = dcmtk/lib/libdcmimage.a; sourceTree = "<group>"; };
 		0ECA59812AC0543600A1C87B /* libz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libz.a; path = ../../../../opt/homebrew/Cellar/zlib/1.2.13/lib/libz.a; sourceTree = "<group>"; };
 		0ECA59832AC0546B00A1C87B /* CppTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CppTest.entitlements; sourceTree = "<group>"; };
-		0ECA59852AC0722400A1C87B /* DCMView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCMView-Bridging-Header.h"; sourceTree = "<group>"; };
-		0ECA59902AC0873100A1C87B /* c_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = c_interface.cpp; sourceTree = "<group>"; };
-		0ECA59912AC0873100A1C87B /* c_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_interface.h; sourceTree = "<group>"; };
+		0ECA59902AC0873100A1C87B /* dcmtk_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dcmtk_interface.cpp; sourceTree = "<group>"; };
+		0ECA59912AC0873100A1C87B /* dcmtk_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = dcmtk_interface.hpp; sourceTree = "<group>"; };
 		0EF68D0B2AE5287500DADD84 /* DicomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicomImageView.swift; sourceTree = "<group>"; };
 		0EF68D0F2AE5791A00DADD84 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,7 +69,7 @@
 		0ECA59322ABE291A00A1C87B = {
 			isa = PBXGroup;
 			children = (
-				0ECA59842AC06F4000A1C87B /* CppInterface */,
+				0ECA59842AC06F4000A1C87B /* DcmInterface */,
 				0ECA593D2ABE291A00A1C87B /* DCMView */,
 				0ECA596E2AC0532500A1C87B /* CppTest */,
 				0ECA593C2ABE291A00A1C87B /* Products */,
@@ -123,14 +123,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0ECA59842AC06F4000A1C87B /* CppInterface */ = {
+		0ECA59842AC06F4000A1C87B /* DcmInterface */ = {
 			isa = PBXGroup;
 			children = (
-				0ECA59902AC0873100A1C87B /* c_interface.cpp */,
-				0ECA59912AC0873100A1C87B /* c_interface.h */,
-				0ECA59852AC0722400A1C87B /* DCMView-Bridging-Header.h */,
+				0EC9A6BF2DB491CE00BB12AF /* module.modulemap */,
+				0ECA59902AC0873100A1C87B /* dcmtk_interface.cpp */,
+				0ECA59912AC0873100A1C87B /* dcmtk_interface.hpp */,
 			);
-			path = CppInterface;
+			path = DcmInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +208,7 @@
 				0ECA593F2ABE291A00A1C87B /* AppDelegate.swift in Sources */,
 				0EF68D102AE5791A00DADD84 /* Utility.swift in Sources */,
 				0EF68D0C2AE5287500DADD84 /* DicomImageView.swift in Sources */,
-				0ECA59922AC0873100A1C87B /* c_interface.cpp in Sources */,
+				0ECA59922AC0873100A1C87B /* dcmtk_interface.cpp in Sources */,
 				0E65E9DE2AE29793004236BF /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,10 +380,12 @@
 					/opt/homebrew/Cellar/zlib/1.2.13/lib,
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-cxx-interoperability-mode=default";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teaeles.DCMView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "CppInterface/DCMView-Bridging-Header.h";
+				SWIFT_INCLUDE_PATHS = ./DcmInterface;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -414,10 +416,12 @@
 					/opt/homebrew/Cellar/zlib/1.2.13/lib,
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-cxx-interoperability-mode=default";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teaeles.DCMView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "CppInterface/DCMView-Bridging-Header.h";
+				SWIFT_INCLUDE_PATHS = ./DcmInterface;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
