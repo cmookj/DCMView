@@ -1,0 +1,6 @@
+// DCM C++ Interface module
+module DcmtkInterfaceLib {
+    header "dcmtk_interface.hpp"
+    
+    requires cplusplus
+}

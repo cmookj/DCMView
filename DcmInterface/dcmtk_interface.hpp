@@ -1,21 +1,21 @@
 //
-//  c_interface.h
+//  dcmtk_interface.hpp
 //  DCMView
 //
 //  Created by Changmook Chun on 9/24/23.
 //
 
-#ifndef c_interface_h
-#define c_interface_h
+#ifndef dcmtk_interface_h
+#define dcmtk_interface_h
 
 enum {
     NO_ERR = 0,
     DICOM_NOT_OPEN = 1
 };
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+//#ifdef __cplusplus
+//extern "C" {
+//#endif
 
 int create_reader(const char* file_name);
 
@@ -31,8 +31,8 @@ const void* const get_pixel_data_raw();
 int signed_representation();
 int byte_size_representation();
 
-#ifdef __cplusplus
-}
-#endif
+//#ifdef __cplusplus
+//}
+//#endif
 
-#endif /* c_interface_h */
+#endif /* dcmtk_interface_h */
