@@ -32,16 +32,22 @@ Get source code from GitHub repository
 ```shell
 > mkdir work && cd work
 > git clone git@github.com:DCMTK/dcmtk.git
+> mv dcmtk dcmtk-src
 ```
 
 #### Build
 ```shell
-> mkdir build && cd build
-> cmake -DDCMTK_DEFAULT_DICT="builtin" ../dcmtk
-> make -j8
-> make DESTDIR=../dcmtk-install install
+> mkdir dcmtk-build && cd dcmtk-build
+> cmake -DDCMTK_DEFAULT_DICT="builtin" ../dcmtk-src
+> make -j
+> make DESTDIR=../dcmtk install
+> cd ../dcmtk && mv ./usr/local/* ./
+> rm -rf ./usr
 ```
 
+After building the DCMTK, move the three directories, `dcmtk`, `dcmtk-build`, and `dcmtk-src` to the project directory.
+
+![](figs/project_dir.png)
 
 
 ## TODO
